@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.ManageCakesController"
+            stylesheets="@../css/style.css">
+
+    <top>
+
+        <VBox spacing="15">
+
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <HBox spacing="10">
+
+                <Button text="⬅ Back"
+                        styleClass="secondaryButton"
+                        onAction="#goBack"/>
+
+                <Button text="🏠 Home"
+                        styleClass="secondaryButton"
+                        onAction="#goHome"/>
+
+            </HBox>
+
+            <Label text="Manage Cakes"
+                   styleClass="pageTitle"/>
+
+        </VBox>
+
+    </top>
+
+    <center>
+
+        <VBox spacing="20">
+
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <TableView fx:id="cakeTable">
+
+                <columns>
+
+                    <TableColumn fx:id="idColumn"
+                                 text="ID"
+                                 prefWidth="80"/>
+
+                    <TableColumn fx:id="nameColumn"
+                                 text="Name"
+                                 prefWidth="180"/>
+
+                    <TableColumn fx:id="priceColumn"
+                                 text="Price"
+                                 prefWidth="120"/>
+
+                    <TableColumn fx:id="categoryColumn"
+                                 text="Category"
+                                 prefWidth="150"/>
+
+                    <TableColumn fx:id="availableColumn"
+                                 text="Available"
+                                 prefWidth="120"/>
+
+                </columns>
+
+            </TableView>
+
+            <HBox spacing="15">
+
+                <Button text="Add Cake"
+                        styleClass="mainButton"
+                        onAction="#addCake"/>
+
+                <Button text="Edit Cake"
+                        styleClass="mainButton"
+                        onAction="#editCake"/>
+
+                <Button text="Delete Cake"
+                        styleClass="mainButton"
+                        onAction="#deleteCake"/>
+
+            </HBox>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

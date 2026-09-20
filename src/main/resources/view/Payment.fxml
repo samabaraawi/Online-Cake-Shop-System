@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.PaymentController"
+            stylesheets="@../css/style.css">
+
+    <top>
+
+        <VBox spacing="15">
+
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <HBox spacing="10">
+
+                <Button text="⬅ Back"
+                        onAction="#goBack"
+                        styleClass="secondaryButton"/>
+
+                <Button text="🏠 Home"
+                        onAction="#goHome"
+                        styleClass="secondaryButton"/>
+
+            </HBox>
+
+            <Label text="Payment"
+                   styleClass="pageTitle"/>
+
+        </VBox>
+
+    </top>
+
+    <center>
+
+        <ScrollPane fitToWidth="true"
+                    pannable="true"
+                    hbarPolicy="NEVER"
+                    vbarPolicy="ALWAYS">
+
+            <content>
+
+                <VBox spacing="18"
+                      prefWidth="500">
+
+                    <padding>
+                        <Insets top="20"
+                                right="20"
+                                bottom="20"
+                                left="20"/>
+                    </padding>
+
+                    <Label text="Order Summary"
+                           styleClass="sectionTitle"/>
+
+                    <Label fx:id="cakeLabel"/>
+
+                    <Label fx:id="quantityLabel"/>
+
+                    <Label fx:id="methodLabel"/>
+
+                    <Separator/>
+
+                    <Label text="Original Price"
+                           styleClass="sectionTitle"/>
+
+                    <Label fx:id="originalPriceLabel"
+                           styleClass="price"/>
+
+                    <Label fx:id="promotionLabel"
+                           wrapText="true"
+                           style="-fx-text-fill:#27AE60;
+              -fx-font-size:15px;
+              -fx-font-weight:bold;"/>
+
+                    <Label text="Delivery Fee"
+                           styleClass="sectionTitle"/>
+
+                    <Label fx:id="deliveryFeeLabel"
+                           styleClass="price"/>
+
+
+                    <Label text="Final Total"
+                           styleClass="sectionTitle"/>
+
+                    <Label fx:id="totalLabel"
+                           styleClass="price"/>
+
+                    <Separator/>
+
+                    <Label text="Payment Method"
+                           styleClass="sectionTitle"/>
+
+                    <fx:define>
+                        <ToggleGroup fx:id="paymentGroup"/>
+                    </fx:define>
+
+                    <VBox spacing="10">
+
+                        <RadioButton fx:id="cashRadio"
+                                     text="Cash"
+                                     toggleGroup="$paymentGroup"
+                                     selected="true"/>
+
+                        <RadioButton fx:id="cardRadio"
+                                     text="Credit Card"
+                                     toggleGroup="$paymentGroup"/>
+
+                    </VBox>
+
+                    <VBox fx:id="cardSection"
+                          spacing="10"
+                          visible="false"
+                          managed="false"
+                          styleClass="inputSection">
+
+                        <TextField fx:id="holderField"
+                                   promptText="Card Holder"/>
+
+                        <TextField fx:id="cardNumberField"
+                                   promptText="Card Number"/>
+
+                        <TextField fx:id="expiryField"
+                                   promptText="MM/YY"/>
+
+                        <PasswordField fx:id="cvvField"
+                                       promptText="CVV"/>
+
+                    </VBox>
+
+                    <Button text="Complete Payment"
+                            prefHeight="45"
+                            styleClass="mainButton"
+                            onAction="#completePayment"/>
+
+                </VBox>
+
+            </content>
+
+        </ScrollPane>
+
+    </center>
+
+</BorderPane>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.CustomCakeController"
+            stylesheets="@../css/style.css">
+
+    <top>
+
+        <VBox spacing="15">
+
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <HBox spacing="10">
+
+                <Button text="⬅ Back"
+                        onAction="#goBack"
+                        styleClass="secondaryButton"/>
+
+                <Button text="🏠 Home"
+                        onAction="#goHome"
+                        styleClass="secondaryButton"/>
+
+            </HBox>
+
+            <Label text="Custom Cake Request"
+                   styleClass="pageTitle"/>
+
+        </VBox>
+
+    </top>
+
+    <center>
+
+        <ScrollPane fitToWidth="true"
+                    pannable="true"
+                    hbarPolicy="NEVER"
+                    vbarPolicy="ALWAYS">
+
+            <content>
+
+                <VBox spacing="18"
+                      prefWidth="500"
+                      maxWidth="600">
+
+                    <padding>
+                        <Insets top="20"
+                                right="20"
+                                bottom="20"
+                                left="20"/>
+                    </padding>
+
+                    <Label text="Customer Information"
+                           styleClass="sectionTitle"/>
+
+                    <TextField fx:id="customerNameField"
+                               promptText="Customer Name"/>
+
+                    <Separator/>
+
+                    <Label text="Cake Size"
+                           styleClass="sectionTitle"/>
+
+                    <ComboBox fx:id="sizeComboBox"/>
+
+                    <Label text="Flavor"
+                           styleClass="sectionTitle"/>
+
+                    <ComboBox fx:id="flavorComboBox"/>
+
+                    <Label text="Filling"
+                           styleClass="sectionTitle"/>
+
+                    <ComboBox fx:id="fillingComboBox"/>
+
+                    <Label text="Frosting"
+                           styleClass="sectionTitle"/>
+
+                    <ComboBox fx:id="frostingComboBox"/>
+
+                    <Label text="Message On Cake"
+                           styleClass="sectionTitle"/>
+
+                    <TextArea fx:id="messageArea"
+                              prefRowCount="2"/>
+
+                    <Label text="Special Instructions"
+                           styleClass="sectionTitle"/>
+
+                    <TextArea fx:id="instructionsArea"
+                              prefRowCount="4"/>
+
+                    <Separator/>
+
+                    <Label text="Reference Image"
+                           styleClass="sectionTitle"/>
+
+                    <HBox spacing="10">
+
+                        <Button text="Choose Image"
+                                onAction="#chooseImage"
+                                styleClass="secondaryButton"/>
+
+                        <Label fx:id="imageNameLabel"
+                               text="No image selected"/>
+
+                    </HBox>
+
+                    <Separator/>
+
+                    <Label text="Fulfillment Method"
+                           styleClass="sectionTitle"/>
+
+                    <fx:define>
+                        <ToggleGroup fx:id="fulfillmentGroup"/>
+                    </fx:define>
+
+                    <HBox spacing="20">
+
+                        <RadioButton fx:id="deliveryRadio"
+                                     text="Delivery"
+                                     toggleGroup="$fulfillmentGroup"
+                                     selected="true"/>
+
+                        <RadioButton fx:id="pickupRadio"
+                                     text="Pickup"
+                                     toggleGroup="$fulfillmentGroup"/>
+
+                    </HBox>
+
+                    <VBox fx:id="deliverySection"
+                          spacing="10"
+                          styleClass="inputSection">
+
+                        <Label text="Delivery Information"
+                               styleClass="sectionTitle"/>
+
+                        <TextField fx:id="addressField"
+                                   promptText="Address"/>
+
+                        <TextField fx:id="phoneField"
+                                   promptText="Phone Number"/>
+
+                    </VBox>
+
+                    <VBox fx:id="pickupSection"
+                          spacing="10"
+                          visible="false"
+                          managed="false"
+                          styleClass="inputSection">
+
+                        <Label text="Pickup Information"
+                               styleClass="sectionTitle"/>
+
+                        <ComboBox fx:id="branchComboBox"
+                                  promptText="Select Branch"/>
+
+                        <DatePicker fx:id="pickupDatePicker"/>
+
+                        <ComboBox fx:id="pickupTimeComboBox"
+                                  promptText="Pickup Time"/>
+
+                    </VBox>
+
+                    <Button text="Submit Custom Request"
+                            prefHeight="45"
+                            styleClass="mainButton"
+                            onAction="#submitRequest"/>
+
+                </VBox>
+
+            </content>
+
+        </ScrollPane>
+
+    </center>
+
+</BorderPane>

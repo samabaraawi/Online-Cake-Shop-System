@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.ReportsController"
+            stylesheets="@../css/style.css">
+
+    <top>
+        <VBox spacing="15">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <HBox spacing="10">
+                <Button text="⬅ Back"
+                        onAction="#goBack"
+                        styleClass="secondaryButton"/>
+
+                <Button text="🏠 Home"
+                        onAction="#goHome"
+                        styleClass="secondaryButton"/>
+            </HBox>
+
+            <Label text="Reports"
+                   styleClass="pageTitle"/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="20">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <HBox spacing="15">
+                <Label text="Report Type"
+                       styleClass="sectionTitle"/>
+
+                <ComboBox fx:id="reportTypeBox"
+                          prefWidth="250"/>
+            </HBox>
+
+            <HBox spacing="15">
+                <Label text="From Date"
+                       styleClass="sectionTitle"/>
+
+                <DatePicker fx:id="fromDatePicker"/>
+
+                <Label text="To Date"
+                       styleClass="sectionTitle"/>
+
+                <DatePicker fx:id="toDatePicker"/>
+            </HBox>
+
+            <Button text="Generate Report"
+                    onAction="#generateReport"
+                    styleClass="mainButton"
+                    prefWidth="220"/>
+
+            <Separator/>
+
+            <TableView fx:id="reportTable">
+                <columns>
+                    <TableColumn fx:id="metricColumn"
+                                 text="Metric"
+                                 prefWidth="300"/>
+
+                    <TableColumn fx:id="valueColumn"
+                                 text="Value"
+                                 prefWidth="300"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+</BorderPane>

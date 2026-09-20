@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.MainController"
+            stylesheets="@../css/style.css">
+
+    <center>
+
+        <VBox alignment="CENTER" spacing="35">
+
+            <padding>
+                <Insets top="40" right="40" bottom="40" left="40"/>
+            </padding>
+
+            <Label text="🍰"
+                   styleClass="cakeIcon"/>
+
+            <Label text="Sweet Cake Shop"
+                   styleClass="title"/>
+
+            <Label text="Fresh Cakes Made With Love"
+                   styleClass="subtitle"/>
+
+            <Label text="Choose Your Portal"
+                   styleClass="sectionTitle"/>
+
+            <HBox alignment="CENTER"
+                  spacing="40">
+
+                <!-- Customer Card -->
+
+                <VBox alignment="CENTER"
+                      spacing="20"
+                      prefWidth="340"
+                      styleClass="cakeCard">
+
+                    <padding>
+                        <Insets top="25" right="25" bottom="25" left="25"/>
+                    </padding>
+
+                    <Label text="👤 Customer"
+                           styleClass="sectionTitle"/>
+
+                    <Button text="Browse Standard Cakes"
+                            prefWidth="250"
+                            styleClass="mainButton"
+                            onAction="#openBrowsePage"/>
+
+                    <Button text="Request Custom Cake"
+                            prefWidth="250"
+                            styleClass="mainButton"
+                            onAction="#openCustomCakePage"/>
+
+                    <Button text="Track My Order"
+                            prefWidth="250"
+                            styleClass="mainButton"
+                            onAction="#openTrackOrderPage"
+                    />
+
+                </VBox>
+
+                <!-- Staff Card -->
+
+                <VBox alignment="CENTER"
+                      spacing="20"
+                      prefWidth="340"
+                      styleClass="cakeCard">
+
+                    <padding>
+                        <Insets top="25" right="25" bottom="25" left="25"/>
+                    </padding>
+
+                    <Label text="👨‍💼 Staff"
+                           styleClass="sectionTitle"/>
+
+                    <Region prefHeight="40"/>
+
+                    <Button text="Staff Dashboard"
+                            prefWidth="250"
+                            styleClass="mainButton"
+                            onAction="#openStaffDashboard"/>
+
+                    <Region prefHeight="90"/>
+
+                </VBox>
+
+            </HBox>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

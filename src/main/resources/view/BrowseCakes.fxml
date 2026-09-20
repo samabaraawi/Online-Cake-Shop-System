@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.BrowseCakesController"
+            stylesheets="@../css/style.css">
+
+    <top>
+
+        <VBox spacing="15">
+
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <HBox spacing="10">
+
+                <Button text="⬅ Back"
+                        onAction="#goBack"
+                        styleClass="secondaryButton"/>
+
+                <Button text="🏠 Home"
+                        onAction="#goHome"
+                        styleClass="secondaryButton"/>
+
+            </HBox>
+
+            <Label text="Available Cakes"
+                   styleClass="pageTitle"/>
+
+            <HBox spacing="15">
+
+                <TextField fx:id="searchField"
+                           promptText="Search by name, flavor, or category..."
+                           HBox.hgrow="ALWAYS"/>
+
+                <ComboBox fx:id="categoryBox"
+                          prefWidth="170"
+                          promptText="Category"/>
+
+                <Button text="Search"
+                        onAction="#searchCake"
+                        styleClass="mainButton"/>
+
+            </HBox>
+
+        </VBox>
+
+    </top>
+
+    <center>
+
+        <ScrollPane fitToWidth="true"
+                    pannable="true"
+                    hbarPolicy="NEVER"
+                    vbarPolicy="ALWAYS">
+
+            <content>
+
+                <FlowPane fx:id="cakesContainer"
+                          hgap="20"
+                          vgap="20"
+                          prefWrapLength="1200">
+
+                    <padding>
+                        <Insets top="20"
+                                right="20"
+                                bottom="20"
+                                left="20"/>
+                    </padding>
+
+                </FlowPane>
+
+            </content>
+
+        </ScrollPane>
+
+    </center>
+
+</BorderPane>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.AcceptOrdersController"
+            stylesheets="@../css/style.css">
+
+    <top>
+
+        <VBox spacing="15">
+
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <HBox spacing="10">
+
+                <Button text="⬅ Back"
+                        onAction="#goBack"
+                        styleClass="secondaryButton"/>
+
+                <Button text="🏠 Home"
+                        onAction="#goHome"
+                        styleClass="secondaryButton"/>
+
+            </HBox>
+
+            <Label text="Accept Customer Orders"
+                   styleClass="pageTitle"/>
+
+        </VBox>
+
+    </top>
+
+    <center>
+
+        <VBox spacing="20">
+
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <TableView fx:id="ordersTable">
+
+                <columns>
+
+                    <TableColumn fx:id="idColumn"
+                                 text="Order ID"
+                                 prefWidth="120"/>
+
+                    <TableColumn fx:id="cakeColumn"
+                                 text="Cake"
+                                 prefWidth="220"/>
+
+                    <TableColumn fx:id="statusColumn"
+                                 text="Status"
+                                 prefWidth="170"/>
+
+                </columns>
+
+            </TableView>
+
+            <Button text="Accept Selected Order"
+                    styleClass="mainButton"
+                    prefWidth="250"
+                    onAction="#acceptOrder"/>
+
+            <HBox spacing="15"
+                  alignment="CENTER_LEFT">
+
+                <Label text="New Status"
+                       styleClass="sectionTitle"/>
+
+                <ComboBox fx:id="statusBox"
+                          prefWidth="220"/>
+
+                <Button text="Update Status"
+                        styleClass="mainButton"
+                        onAction="#updateStatus"/>
+
+            </HBox>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.ManagePromotionsController"
+            stylesheets="@../css/style.css">
+
+    <top>
+
+        <VBox spacing="15">
+
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <HBox spacing="10">
+
+                <Button text="⬅ Back"
+                        styleClass="secondaryButton"
+                        onAction="#goBack"/>
+
+                <Button text="🏠 Home"
+                        styleClass="secondaryButton"
+                        onAction="#goHome"/>
+
+            </HBox>
+
+            <Label text="Manage Promotions"
+                   styleClass="pageTitle"/>
+
+        </VBox>
+
+    </top>
+
+    <center>
+
+        <VBox spacing="20">
+
+            <padding>
+                <Insets top="20"
+                        right="20"
+                        bottom="20"
+                        left="20"/>
+            </padding>
+
+            <TableView fx:id="promotionTable">
+
+                <columns>
+
+                    <TableColumn fx:id="idColumn"
+                                 text="ID"
+                                 prefWidth="80"/>
+
+                    <TableColumn fx:id="titleColumn"
+                                 text="Title"
+                                 prefWidth="220"/>
+
+                    <TableColumn fx:id="discountColumn"
+                                 text="Discount (%)"
+                                 prefWidth="130"/>
+
+                    <TableColumn fx:id="startDateColumn"
+                                 text="Start Date"
+                                 prefWidth="150"/>
+
+                    <TableColumn fx:id="endDateColumn"
+                                 text="End Date"
+                                 prefWidth="150"/>
+
+                    <TableColumn fx:id="activeColumn"
+                                 text="Active"
+                                 prefWidth="100"/>
+
+                </columns>
+
+            </TableView>
+
+            <HBox spacing="15"
+                  alignment="CENTER">
+
+                <Button text="Add Promotion"
+                        styleClass="mainButton"
+                        onAction="#addPromotion"/>
+
+                <Button text="Edit Promotion"
+                        styleClass="mainButton"
+                        onAction="#editPromotion"/>
+
+                <Button text="Delete Promotion"
+                        styleClass="mainButton"
+                        onAction="#deletePromotion"/>
+
+            </HBox>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

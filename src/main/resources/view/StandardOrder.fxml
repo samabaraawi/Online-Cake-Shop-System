@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.StandardOrderController"
+            stylesheets="@../css/style.css">
+
+    <top>
+
+        <VBox spacing="15">
+
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <HBox spacing="10">
+
+                <Button text="⬅ Back"
+                        onAction="#goBack"
+                        styleClass="secondaryButton"/>
+
+                <Button text="🏠 Home"
+                        onAction="#goHome"
+                        styleClass="secondaryButton"/>
+
+            </HBox>
+
+            <Label text="Place Standard Cake Order"
+                   styleClass="pageTitle"/>
+
+        </VBox>
+
+    </top>
+
+    <center>
+
+        <ScrollPane fitToWidth="true"
+                    pannable="true"
+                    hbarPolicy="NEVER"
+                    vbarPolicy="ALWAYS">
+
+            <content>
+
+                <HBox spacing="40">
+
+                    <padding>
+                        <Insets top="20"
+                                right="20"
+                                bottom="30"
+                                left="20"/>
+                    </padding>
+
+                    <ImageView fx:id="cakeImage"
+                               fitWidth="220"
+                               fitHeight="220"
+                               preserveRatio="true"/>
+
+                    <VBox spacing="18"
+                          prefWidth="420"
+                          maxWidth="500">
+
+                        <Label fx:id="cakeName"
+                               styleClass="cakeName"/>
+
+                        <Label fx:id="cakeDescription"
+                               wrapText="true"/>
+                        <Label fx:id="cakeFlavor"/>
+
+                        <Label fx:id="cakeSize"/>
+
+
+                        <Label text="Original Price"
+                               styleClass="sectionTitle"/>
+
+                        <Label fx:id="originalPriceLabel"
+                               styleClass="price"/>
+
+                        <Label fx:id="promotionLabel"
+                               wrapText="true"
+                               style="-fx-text-fill:#27AE60;
+                                      -fx-font-size:15px;
+                                      -fx-font-weight:bold;"/>
+
+                        <Label text="Discounted Price"
+                               styleClass="sectionTitle"/>
+
+                        <Label fx:id="cakePrice"
+                               styleClass="price"/>
+
+                        <Label text="Total Price"
+                               styleClass="sectionTitle"/>
+
+                        <Label fx:id="totalPriceLabel"
+                               styleClass="price"/>
+
+                        <Label text="Delivery Fee"
+                               styleClass="sectionTitle"/>
+
+                        <Label fx:id="deliveryFeeLabel"
+                               styleClass="price"/>
+
+                        <Separator/>
+
+                        <Label text="Quantity"
+                               styleClass="sectionTitle"/>
+
+                        <HBox alignment="CENTER_LEFT"
+                              spacing="20">
+
+                            <Button fx:id="minusButton"
+                                    text="-"
+                                    prefWidth="45"
+                                    prefHeight="45"
+                                    onAction="#decreaseQuantity"
+                                    styleClass="quantityButton"/>
+
+                            <Label fx:id="quantityLabel"
+                                   text="1"
+                                   styleClass="quantityLabel"/>
+
+                            <Button fx:id="plusButton"
+                                    text="+"
+                                    prefWidth="45"
+                                    prefHeight="45"
+                                    onAction="#increaseQuantity"
+                                    styleClass="quantityButton"/>
+
+                        </HBox>
+
+                        <Separator/>
+
+                        <!-- Customer Information -->
+
+                        <Label text="Customer Information"
+                               styleClass="sectionTitle"/>
+
+                        <TextField fx:id="customerNameField"
+                                   promptText="Enter customer name"/>
+
+                        <Separator/>
+
+                        <!-- Fulfillment -->
+
+                        <Label text="Fulfillment Method"
+                               styleClass="sectionTitle"/>
+
+                        <fx:define>
+                            <ToggleGroup fx:id="fulfillmentGroup"/>
+                        </fx:define>
+
+                        <VBox spacing="10">
+
+                            <RadioButton fx:id="deliveryRadio"
+                                         text="Delivery"
+                                         toggleGroup="$fulfillmentGroup"
+                                         selected="true"/>
+
+                            <RadioButton fx:id="pickupRadio"
+                                         text="Pickup"
+                                         toggleGroup="$fulfillmentGroup"/>
+
+                        </VBox>
+
+                        <!-- Delivery -->
+
+                        <VBox fx:id="deliverySection"
+                              spacing="10"
+                              styleClass="inputSection">
+
+                            <Label text="Delivery Information"
+                                   styleClass="sectionTitle"/>
+
+                            <TextField fx:id="addressField"
+                                       promptText="Enter delivery address"/>
+
+                            <TextField fx:id="phoneField"
+                                       promptText="Enter phone number"/>
+
+                        </VBox>
+
+                        <!-- Pickup -->
+
+                        <VBox fx:id="pickupSection"
+                              spacing="10"
+                              visible="false"
+                              managed="false"
+                              styleClass="inputSection">
+
+                            <Label text="Pickup Information"
+                                   styleClass="sectionTitle"/>
+
+                            <ComboBox fx:id="branchComboBox"
+                                      prefWidth="300"
+                                      promptText="Select branch"/>
+
+                            <DatePicker fx:id="pickupDatePicker"/>
+
+                            <ComboBox fx:id="pickupTimeComboBox"
+                                      prefWidth="300"
+                                      promptText="Select pickup time"/>
+
+                        </VBox>
+
+                        <Button text="Continue To Payment →"
+                                prefWidth="260"
+                                prefHeight="45"
+                                styleClass="mainButton"
+                                onAction="#continueToPayment"/>
+
+                    </VBox>
+
+                </HBox>
+
+            </content>
+
+        </ScrollPane>
+
+    </center>
+
+</BorderPane>

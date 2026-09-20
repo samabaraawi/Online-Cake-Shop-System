@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.ReviewController"
+            stylesheets="@../css/style.css">
+
+    <center>
+
+        <VBox alignment="CENTER"
+              spacing="20">
+
+            <padding>
+                <Insets top="30"
+                        right="30"
+                        bottom="30"
+                        left="30"/>
+            </padding>
+
+            <Label text="Submit Review"
+                   styleClass="pageTitle"/>
+
+            <Label fx:id="orderLabel"/>
+
+            <Label fx:id="cakeLabel"/>
+
+            <Label text="Rating"/>
+
+            <ComboBox fx:id="ratingBox"
+                      prefWidth="220"/>
+
+            <Label text="Comment"/>
+
+            <TextArea fx:id="commentArea"
+                      prefRowCount="5"
+                      prefWidth="350"/>
+
+            <Button text="Submit Review"
+                    styleClass="mainButton"
+                    onAction="#submitReview"/>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

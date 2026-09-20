@@ -1,0 +1,154 @@
+.root{
+
+    -fx-background-color:#FFF7F9;
+
+}
+
+.title{
+
+    -fx-font-size:34px;
+    -fx-font-weight:bold;
+    -fx-text-fill:#D63384;
+
+}
+
+.subtitle{
+
+    -fx-font-size:18px;
+    -fx-text-fill:#555555;
+
+}
+
+.mainButton{
+
+    -fx-background-color:#D63384;
+    -fx-text-fill:white;
+    -fx-font-size:16px;
+    -fx-background-radius:15;
+    -fx-padding:12 35;
+
+}
+
+.mainButton:hover{
+
+    -fx-background-color:#B61E6E;
+
+}
+
+.cakeIcon{
+
+    -fx-font-size:70px;
+
+}
+
+.pageTitle{
+
+    -fx-font-size:28px;
+    -fx-font-weight:bold;
+    -fx-text-fill:#D63384;
+
+}
+
+.text-field{
+
+    -fx-background-radius:10;
+    -fx-font-size:14px;
+    -fx-pref-width:250;
+
+}
+
+.combo-box{
+
+    -fx-background-radius:10;
+
+}
+
+.cakeCard{
+
+    -fx-background-color:white;
+
+    -fx-background-radius:18;
+
+    -fx-border-radius:18;
+
+    -fx-border-color:#f1d1e0;
+
+    -fx-effect:dropshadow(gaussian, rgba(0,0,0,0.10), 12,0,0,3);
+
+}
+
+.cakeName{
+
+    -fx-font-size:22px;
+
+    -fx-font-weight:bold;
+
+}
+
+.price{
+
+    -fx-font-size:18px;
+
+    -fx-font-weight:bold;
+
+    -fx-text-fill:#D63384;
+
+}
+
+.sectionTitle{
+
+    -fx-font-size:18px;
+
+    -fx-font-weight:bold;
+
+}
+
+.quantityLabel{
+
+    -fx-font-size:20px;
+
+    -fx-font-weight:bold;
+
+    -fx-text-fill:#D63384;
+
+}
+
+.inputSection{
+    -fx-background-color:#FFF7F9;
+    -fx-padding:15;
+    -fx-background-radius:12;
+    -fx-border-color:#f1d1e0;
+    -fx-border-radius:12;
+}
+
+.quantityButton{
+
+    -fx-background-color:#D63384;
+    -fx-text-fill:white;
+    -fx-font-size:20px;
+    -fx-font-weight:bold;
+    -fx-background-radius:10;
+}
+
+.quantityButton:hover{
+
+    -fx-background-color:#b81d6f;
+
+}
+
+.secondaryButton{
+
+    -fx-background-color:#F3F4F6;
+    -fx-text-fill:#333333;
+    -fx-font-size:14px;
+    -fx-font-weight:bold;
+    -fx-background-radius:10;
+    -fx-cursor:hand;
+
+}
+
+.secondaryButton:hover{
+
+    -fx-background-color:#E5E7EB;
+
+}
